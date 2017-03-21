@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/telemark/micro-sitemap-to-array.svg?branch=master)](https://travis-ci.org/telemark/micro-sitemap-to-array)
+[![Build Status](https://travis-ci.org/telemark/micro-portalen-content.svg?branch=master)](https://travis-ci.org/telemark/micro-portalen-content)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-sitemap-to-array.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-portalen-content.svg)](https://greenkeeper.io/)
 
 # micro-portalen-content
 

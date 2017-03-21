@@ -7,7 +7,7 @@ const { parse } = require('url')
 const getContent = require('./lib/get-content')
 
 module.exports = async (request, response) => {
-  const {query} = await parse(request.url, true)
+  const { query } = await parse(request.url, true)
   const data = ['POST'].includes(request.method) ? await json(request) : query
   if (Object.keys(data).length > 0) {
     let roles = []
