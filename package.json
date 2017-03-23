@@ -55,6 +55,7 @@
     "axios": "0.15.3",
     "marked": "0.3.6",
     "micro": "7.2.1",
+    "node-cache": "4.1.1",
     "tfk-unique-array": "1.0.11"
   }
 }
