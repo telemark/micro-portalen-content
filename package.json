@@ -1,7 +1,7 @@
 {
   "name": "micro-portalen-content",
   "description": "Returns array from sitemap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "private": true,
   "author": {
@@ -52,7 +52,7 @@
     "test-listen": "1.0.1"
   },
   "dependencies": {
-    "axios": "0.16.1",
+    "axios": "0.15.3",
     "marked": "0.3.6",
     "micro": "7.3.0",
     "node-cache": "4.1.1",
