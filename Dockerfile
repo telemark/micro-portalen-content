@@ -1,11 +1,5 @@
-###########################################################
-#
-# Dockerfile for micro-sitemap-to-array
-#
-###########################################################
-
-# Setting the base to nodejs 7.7.3
-FROM node:7.7.3-alpine
+# Setting the base to nodejs 7.10.0
+FROM node:7.10.0-alpine
 
 # Maintainer
 MAINTAINER Geir Gåsodden

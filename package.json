@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=7.7.3"
+    "node": ">=7.10.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -39,22 +39,22 @@
   "homepage": "https://github.com/telemark/micro-portalen-content",
   "now": {
     "alias": [
-      "content.portalen.t-fk.win"
+      "content.portalen.win"
     ],
     "type": "npm"
   },
   "devDependencies": {
-    "ava": "0.18.2",
-    "coveralls": "2.13.0",
+    "ava": "0.19.1",
+    "coveralls": "2.13.1",
     "nsp": "2.6.3",
-    "nyc": "10.2.0",
-    "standard": "9.0.2",
-    "test-listen": "1.0.1"
+    "nyc": "10.3.0",
+    "standard": "10.0.2",
+    "test-listen": "1.0.2"
   },
   "dependencies": {
-    "axios": "0.15.3",
+    "axios": "0.16.1",
     "marked": "0.3.6",
-    "micro": "7.3.0",
+    "micro": "7.3.2",
     "node-cache": "4.1.1",
     "tfk-unique-array": "1.0.11"
   }

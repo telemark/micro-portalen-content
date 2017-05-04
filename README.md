@@ -11,11 +11,11 @@ Microservice for portalen content
 POST or GET roles for content
 
 ```bash
-$ curl https://content.portalen.t-fk.win?roles=alle|administrasjonen|skole
+$ curl https://content.portalen.win?roles=alle|administrasjonen|skole
 ```
 
 ```bash
-$ curl -d '{"roles": ["alle", "administrasjonen", "skole"]}' https://content.portalen.t-fk.win
+$ curl -d '{"roles": ["alle", "administrasjonen", "skole"]}' https://content.portalen.win
 ```
 
 ## License
