@@ -57,7 +57,7 @@
   "dependencies": {
     "axios": "0.16.2",
     "marked": "0.3.6",
-    "micro": "8.0.2",
+    "micro": "8.0.3",
     "node-cache": "4.1.1",
     "tfk-unique-array": "1.0.11"
   }
