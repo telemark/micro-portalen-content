@@ -1,7 +1,7 @@
 {
   "name": "micro-portalen-content",
   "description": "Returns content for portalen",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "private": true,
   "author": {
