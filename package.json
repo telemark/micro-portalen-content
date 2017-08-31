@@ -1,7 +1,7 @@
 {
   "name": "micro-portalen-content",
   "description": "Returns content for portalen",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "license": "MIT",
   "private": true,
   "author": {
@@ -59,7 +59,7 @@
   "dependencies": {
     "axios": "0.16.2",
     "marked": "0.3.6",
-    "micro": "8.0.4",
+    "micro": "8.0.3",
     "node-cache": "4.1.1",
     "tfk-unique-array": "1.0.11"
   }
