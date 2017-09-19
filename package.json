@@ -1,7 +1,7 @@
 {
   "name": "micro-portalen-content",
   "description": "Returns content for portalen",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=8.5.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -43,16 +43,14 @@
       "content.portalen.win"
     ],
     "type": "npm",
-    "env": {
-      "NODE_ENV": "production"
-    }
+    "dotenv": "production.env"
   },
   "devDependencies": {
     "ava": "0.22.0",
     "coveralls": "2.13.1",
     "micro-dev": "1.2.3",
     "nsp": "2.8.0",
-    "nyc": "11.1.0",
+    "nyc": "11.2.1",
     "standard": "10.0.3",
     "test-listen": "1.0.2"
   },
@@ -61,6 +59,8 @@
     "marked": "0.3.6",
     "micro": "9.0.0",
     "node-cache": "4.1.1",
-    "tfk-unique-array": "1.0.11"
+    "tfk-unique-array": "1.0.11",
+    "winston": "2.3.1",
+    "winston-papertrail": "1.0.5"
   }
 }
