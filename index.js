@@ -1,25 +1,20 @@
 'use strict'
 
-const readFileSync = require('fs').readFileSync
-const marked = require('marked')
-const { json, send } = require('micro')
-const { parse } = require('url')
-const getContent = require('./lib/get-content')
+// MODULES
+const Router = require('router')
+const cors = require('cors')
+const finalhandler = require('finalhandler')
+const handlers = require('./lib/handlers')
 
-module.exports = async (request, response) => {
-  const { query } = await parse(request.url, true)
-  const data = ['POST'].includes(request.method) ? await json(request) : query
-  if (Object.keys(data).length > 0) {
-    let roles = []
-    if (data.roles) {
-      roles = Array.isArray(data.roles) ? data.roles : data.roles.split('|')
-    }
-    const result = await getContent({tags: roles.join(',')})
-    response.setHeader('Access-Control-Allow-Origin', '*')
-    send(response, 200, result)
-  } else {
-    const readme = readFileSync('./README.md', 'utf-8')
-    const html = marked(readme)
-    send(response, 200, html)
-  }
+// INIT
+const router = Router()
+router.use(cors())
+
+// ROUTES
+router.get('/', handlers.frontpage)
+router.get('/api/content', handlers.content)
+router.post('/api/content', handlers.content)
+
+module.exports = (request, response) => {
+  router(request, response, finalhandler(request, response))
 }

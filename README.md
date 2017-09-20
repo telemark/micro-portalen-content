@@ -8,14 +8,20 @@ Microservice for portalen content
 
 ## API
 
-POST or GET roles for content
+### `GET /api/content`
+
+Returns content for roles
 
 ```bash
-$ curl https://content.portalen.win?roles=alle|administrasjonen|skole
+$ curl https://content.portalen.win/api/content?roles=alle|administrasjonen|skole
 ```
 
+### `POST /api/content`
+
+Returns content for roles
+
 ```bash
-$ curl -d '{"roles": ["alle", "administrasjonen", "skole"]}' https://content.portalen.win
+$ curl -d '{"roles": ["alle", "administrasjonen", "skole"]}' https://content.portalen.win/api/content
 ```
 
 ## License
