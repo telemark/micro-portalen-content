@@ -22,6 +22,7 @@
     "start": "micro",
     "dev": "micro-dev",
     "deploy": "npm test && now && now alias",
+    "build-tags": "node utils/build-tags-mapping.js",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
