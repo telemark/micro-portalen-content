@@ -45,7 +45,10 @@
       "content.portalen.win"
     ],
     "type": "npm",
-    "dotenv": "production.env"
+    "dotenv": "production.env",
+    "engines": {
+      "node": "8.9.4"
+    }
   },
   "devDependencies": {
     "ava": "0.25.0",
