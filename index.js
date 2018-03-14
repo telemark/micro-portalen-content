@@ -1,5 +1,3 @@
-'use strict'
-
 // MODULES
 const Router = require('router')
 const cors = require('cors')
