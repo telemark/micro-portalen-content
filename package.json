@@ -40,16 +40,6 @@
     "url": "https://github.com/telemark/micro-portalen-content/issues"
   },
   "homepage": "https://github.com/telemark/micro-portalen-content#readme",
-  "now": {
-    "alias": [
-      "content.portalen.win"
-    ],
-    "type": "npm",
-    "dotenv": "production.env",
-    "engines": {
-      "node": ">=10.0.0"
-    }
-  },
   "devDependencies": {
     "ava": "0.25.0",
     "coveralls": "3.0.2",
