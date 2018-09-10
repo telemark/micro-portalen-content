@@ -1,5 +1,7 @@
 .env
 .travis.yml
 node_modules
+now.json
 production.env
 renovate.json
+utils
