@@ -1,4 +1,4 @@
-const readFileSync = require('fs').readFileSync
+const { readFile } = require('fs').promises
 const marked = require('marked')
 const { json, send } = require('micro')
 const { parse } = require('url')
@@ -14,8 +14,8 @@ function mapTags (roles) {
   return filtered
 }
 
-module.exports.frontpage = (request, response) => {
-  const readme = readFileSync('./README.md', 'utf-8')
+module.exports.frontpage = async (request, response) => {
+  const readme = await readFile('README.md', 'utf-8')
   const html = marked(readme)
   logger('info', ['handlers', 'frontpage'])
   send(response, 200, html)
