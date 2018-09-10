@@ -7,14 +7,24 @@ const myCache = new NodeCache({ stdTTL: 3600 })
 
 async function getNews (tag) {
   const url = `${config.contentUrl}/wp-json/wp/v2/posts?categories=3&tags=${tag}&nocache=${new Date().getTime()}`
-  const { data } = await axios.get(url)
-  return data
+  try {
+    const { data } = await axios.get(url)
+    return data
+  } catch (error) {
+    logger('error', ['get-content', 'getNews', 'url', url, error])
+    return []
+  }
 }
 
 async function getSharedNews () {
   const url = `${config.sharedContentUrl}/wp-json/wp/v2/posts?categories=30&nocache=${new Date().getTime()}`
-  const { data } = await axios.get(url)
-  return data
+  try {
+    const { data } = await axios.get(url)
+    return data
+  } catch (error) {
+    logger('error', ['get-content', 'getSharedNews', 'url', url, error])
+    return []
+  }
 }
 
 function unwrapResults (prev, curr) {
