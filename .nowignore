@@ -1,0 +1,6 @@
+Dockerfile
+.env
+node_modules
+production.env
+test
+utils
