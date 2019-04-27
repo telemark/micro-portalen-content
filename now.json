@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "micro-portalen-content",
+  "scope": "kommunikasjon",
   "alias": [
     "content.portalen.win"
   ],
@@ -13,9 +14,22 @@
     "PAPERTRAIL_PORT": "@tfk-papertrail-port"
   },
   "builds": [
-    { "src": "/index.js", "use": "@now/node" }
+    { 
+      "src": "/index.js",
+      "use": "@now/node" 
+    },
+    {
+      "src": "*.md",
+      "use": "@now/md"
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.js" }
+    { "src": "/",
+      "dest": "/README.html"
+    },
+    { "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    { "src": "/api/(.*)", "dest": "/index.js" }
   ]
 }

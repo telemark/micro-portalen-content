@@ -9,7 +9,6 @@ const router = Router()
 router.use(cors())
 
 // ROUTES
-router.get('/', handlers.frontpage)
 router.get('/api/content', handlers.content)
 router.post('/api/content', handlers.content)
 
