@@ -1,17 +1,40 @@
-// MODULES
-const Router = require('router')
-const cors = require('cors')
-const finalhandler = require('finalhandler')
-const handlers = require('./lib/handlers')
+const { json, send } = require('micro')
+const { parse } = require('url')
+const getContent = require('./lib/get-content')
+const logger = require('./lib/logger')
+const tagMap = require('./lib/data/tags-mapping.json')
+let cache = {}
 
-// INIT
-const router = Router()
-router.use(cors())
+function mapTags (roles) {
+  console.log(tagMap)
+  const mapped = roles.map(role => tagMap[role])
+  console.log(mapped)
+  const filtered = mapped.filter(tag => tag !== undefined)
+  return filtered
+}
 
-// ROUTES
-router.get('/api/content', handlers.content)
-router.post('/api/content', handlers.content)
-
-module.exports = (request, response) => {
-  router(request, response, finalhandler(request, response))
+module.exports = async (request, response) => {
+  const { query } = await parse(request.url, true)
+  const data = ['POST'].includes(request.method) ? await json(request) : query
+  let roles = []
+  if (data.roles) {
+    roles = Array.isArray(data.roles) ? data.roles : data.roles.split('|')
+  }
+  const tags = mapTags(roles)
+  const flushAll = /flushAll/.test(data.roles)
+  if (flushAll) {
+    cache = {}
+    logger('info', ['handlers', 'content', 'cache nuked'])
+  }
+  logger('info', ['handlers', 'content', 'tags', tags])
+  let cached = cache[tags]
+  if (!cached) {
+    logger('info', ['handlers', 'content', 'no cache', 'looking up'])
+    const result = await getContent({ tags: tags })
+    cache[tags] = result
+    cached = result
+  } else {
+    logger('info', ['handlers', 'content', 'cached'])
+  }
+  send(response, 200, cached)
 }
