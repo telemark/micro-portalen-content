@@ -19,7 +19,6 @@
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
-    "start": "micro",
     "dev": "now dev",
     "deploy": "npm test && now --target production",
     "build-tags": "node utils/build-tags-mapping.js",
@@ -27,7 +26,6 @@
   },
   "keywords": [
     "microservice",
-    "micro",
     "content",
     "portalen",
     "Telemark fylkeskommune"
