@@ -1,21 +1,16 @@
-const { json, send } = require('micro')
-const { parse } = require('url')
 const getContent = require('./lib/get-content')
 const logger = require('./lib/logger')
 const tagMap = require('./lib/data/tags-mapping.json')
 let cache = {}
 
 function mapTags (roles) {
-  console.log(tagMap)
   const mapped = roles.map(role => tagMap[role])
-  console.log(mapped)
   const filtered = mapped.filter(tag => tag !== undefined)
   return filtered
 }
 
 module.exports = async (request, response) => {
-  const { query } = await parse(request.url, true)
-  const data = ['POST'].includes(request.method) ? await json(request) : query
+  const data = ['POST'].includes(request.method) ? await request.body : request.query
   let roles = []
   if (data.roles) {
     roles = Array.isArray(data.roles) ? data.roles : data.roles.split('|')
@@ -36,5 +31,5 @@ module.exports = async (request, response) => {
   } else {
     logger('info', ['handlers', 'content', 'cached'])
   }
-  send(response, 200, cached)
+  response.json(cached)
 }
