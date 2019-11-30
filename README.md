@@ -28,7 +28,7 @@ $ curl -d '{"roles": ["alle", "administrasjonen", "skole"]}' https://content.por
 
 The roles will be mapped to tags and then service will collect posts from different WP-instances based om those tags.
 
-The results will be sorted by date. Cached based on the combination of tags and returned to the user.
+The results will be sorted by date, cached based on the combination of tags and returned to the user.
 
 ## Development
 
