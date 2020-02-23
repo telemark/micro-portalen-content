@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/telemark/micro-portalen-content#readme",
   "devDependencies": {
-    "ava": "3.3.0",
+    "ava": "3.4.0",
     "coveralls": "3.0.9",
     "dotenv": "8.2.0",
     "nyc": "15.0.0",
